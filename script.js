@@ -8,6 +8,7 @@ Quais são os meus passos?
  2 - Gerar número aleatório;
  3 - Tornar botão funcional;
  4 - Fazer a resposta aparecer em tela;
+ 5 - Pegar o input da pergunta e fazer aparecer em tela;
  */
 
 const respostas = [
@@ -32,15 +33,25 @@ const respostas = [
   "Sinais apontam que sim.",
 ];
 
-//pesquisando pelo seletor
+//pesquisando a resposta e a pergunta pelo seletor
 const elementoResposta = document.querySelector("#resposta");
+const inputPergunta = document.querySelector("#inputPergunta");
 
 //clicar em fazer pergunta e executar pedaço de código
 function fazerPergunta() {
-  //gerar número aleatório
+  if (inputPergunta.value === "") {
+    alert("Você não digitou a pergunta");
+    return;
+    //toda função que encontra return para imediatamente
+  }
+
+  //mostrar pergunta em tela
+  const pergunta = "<div>" + inputPergunta.value + "</div>";
+
+  //gerar número aleatório e mostrar resposta
   const totalRespostas = respostas.length;
   const numeroAleatorio = Math.floor(Math.random() * totalRespostas);
 
   console.log(respostas[numeroAleatorio]);
-  elementoResposta.innerHTML = respostas[numeroAleatorio];
+  elementoResposta.innerHTML = pergunta + respostas[numeroAleatorio];
 }

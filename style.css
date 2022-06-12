@@ -61,3 +61,15 @@ button:hover {
 img {
   margin-top: 100px;
 }
+
+#resposta {
+  margin-top: 30px;
+}
+
+/* toda div que estiver dentro de resposta */
+#resposta div {
+  font-size: 1rem;
+  font-weight: normal;
+  opacity: 0.9;
+  margin-bottom: 10px;
+}

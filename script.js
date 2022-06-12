@@ -32,6 +32,9 @@ const respostas = [
   "Sinais apontam que sim.",
 ];
 
+//pesquisando pelo seletor
+const elementoResposta = document.querySelector("#resposta");
+
 //clicar em fazer pergunta e executar pedaço de código
 function fazerPergunta() {
   //gerar número aleatório
@@ -39,4 +42,5 @@ function fazerPergunta() {
   const numeroAleatorio = Math.floor(Math.random() * totalRespostas);
 
   console.log(respostas[numeroAleatorio]);
+  elementoResposta.innerHTML = respostas[numeroAleatorio];
 }
